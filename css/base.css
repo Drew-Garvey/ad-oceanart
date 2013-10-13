@@ -586,28 +586,25 @@ footer div#best_of_the_beach {
 }
 
 footer div#tweet {
-  background: url(../img/tweet_frame-logo.png) 230px bottom no-repeat,
-              url(../img/tweet_frame-middle.png) -1px 0px repeat-y;
-  padding: 1px 0;
-  width: 311px; /* ( 311px / 292px ) */
-  margin: 66px 0 40px;
   position: relative;
-  overflow: visible;
+  width: 310px;
+  height: 320px;
 }
+
     footer div#tweet:before {
-      content: '';
+/*      content: '';
       background: url(../img/tweet_frame-top.png) -1px 0px no-repeat;
       position: absolute;
       top: -66px;
-      width: 311px; height: 66px;
+      width: 311px; height: 66px;*/
     }
     
     footer div#tweet:after {
-      content: '';
+/*      content: '';
       background: url(../img/tweet_frame-bottom.png) -4px 0px no-repeat;
       position: absolute;
       bottom: -60px;
-      width: 315px; height: 62px;
+      width: 315px; height: 62px;*/
     }
     
 
