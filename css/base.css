@@ -587,7 +587,8 @@ footer div#best_of_the_beach {
 
 
 footer div#tweet {
-  background: url(../img/tweet_frame-logo.png) 230px 97% no-repeat, url(../img/tweet_frame-middle.png) -1px 0px repeat-y;
+  background: url(../img/tweet_frame-middle.png) -1px 0px repeat-y;
+  background: url(../img/tweet_frame-logo.png) 228px 97% no-repeat, url(../img/tweet_frame-middle.png) -1px 0px repeat-y;
   padding: 1px 0;
   width: 311px; /* ( 311px / 292px ) */
   margin: 66px 0 40px;
