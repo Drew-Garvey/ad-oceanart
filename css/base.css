@@ -568,9 +568,9 @@ footer {
   border-bottom: 5px solid rgb(253,192,16);
 }
 
-figure#best_of_the_beach {
+figure.best_of_the_beach {
   float: left;
-  width: 129px;
+  width: 100px;
 }
 
 footer div#footer_top {
@@ -966,7 +966,7 @@ html[xmlns] .slides {
   }
 
   section.three_column {
-    width: 31.125%;
+    width: 30.125%;
   }
 
   figure.body-img {
