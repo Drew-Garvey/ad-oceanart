@@ -1,0 +1,66 @@
+ humans responsible & colophon */ 
+
+
+
+
+/* TEAM */
+ 
+
+	Co-Designer/Co-Developer: 
+	
+	Aaron Wentt \m/( -_-) 
+
+		www.aaronwentt.com
+		aaron.wentt@gmail.com
+		@aaronw
+		Virginia Beach, VA
+
+	
+
+	Co-Designer/Co-Developer: 
+
+	Drew Garvey
+ 
+		artman.drew@gmail.com
+		@Drew_Garvey
+		Virginia Beach, VA
+
+	
+
+
+
+
+/* THANKS */
+  
+
+	Special thanks to Bill and Ocean Art. 
+
+
+
+
+/* SITE */
+
+	Date Launched:
+	1/23/12 2:02 AM EST
+
+	Site Modified:
+	7/22/12 
+  
+
+	Fonts:
+	Cabin, Georgia	
+
+	Standards: 
+	HTML5, CSS3
+  
+
+	Components: 
+	Modernizr, jQuery
+ 
+
+	Software:
+  	Sublime Text 2, Filezilla                                 
+                       
+
+
+/* humanstxt.org */
