@@ -596,7 +596,7 @@ footer div#tweet {
   overflow: visible;
 }
 
-footer div#tweet iframe {
+footer div#tweet .twitter-timeline {
   margin-left: 42px;
 }
 
