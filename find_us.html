@@ -66,9 +66,17 @@
 				<article class="content map">
 					<span class="heading_dec"><hr /></span>
 					<h3>Having trouble finding us? Click <a href="http://maps.google.com/maps?q=ocean+art&amp;um=1&amp;ie=UTF-8&amp;hl=en&amp;sa=N&amp;tab=wl">here</a> to get directions.</h3>
-					<iframe width="600" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?q=ocean+art&amp;hl=en&amp;ie=UTF8&amp;view=map&amp;f=d&amp;daddr=716+Hilltop+North+Shopping+Ctr,+Virginia+Beach,+VA+23451+(Ocean+Art+Inc)&amp;geocode=CUFyFfckfo_VFVhQMgId9At4-yHAlJp5j2mDvw&amp;t=m&amp;vpsrc=0&amp;ll=36.851844,-76.021163&amp;spn=0.006868,0.012875&amp;z=16&amp;output=embed"></iframe><small>
-						<a href="http://maps.google.com/maps?q=ocean+art&amp;hl=en&amp;ie=UTF8&amp;view=map&amp;f=d&amp;daddr=716+Hilltop+North+Shopping+Ctr,+Virginia+Beach,+VA+23451+(Ocean+Art+Inc)&amp;geocode=CUFyFfckfo_VFVhQMgId9At4-yHAlJp5j2mDvw&amp;t=m&amp;vpsrc=0&amp;ll=36.851844,-76.021163&amp;spn=0.006868,0.012875&amp;z=16&amp;source=embed" style="color: #0000ff; text-align: left;">View Larger Map</a>
-					</small>
+					<!-- <iframe width="600" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?q=ocean+art&amp;hl=en&amp;ie=UTF8&amp;view=map&amp;f=d&amp;daddr=716+Hilltop+North+Shopping+Ctr,+Virginia+Beach,+VA+23451+(Ocean+Art+Inc)&amp;geocode=CUFyFfckfo_VFVhQMgId9At4-yHAlJp5j2mDvw&amp;t=m&amp;vpsrc=0&amp;ll=36.851844,-76.021163&amp;spn=0.006868,0.012875&amp;z=16&amp;output=embed"></iframe><small>
+						<a href="http://maps.google.com/maps?q=ocean+art&amp;hl=en&amp;ie=UTF8&amp;view=map&amp;f=d&amp;daddr=716+Hilltop+North+Shopping+Ctr,+Virginia+Beach,+VA+23451+(Ocean+Art+Inc)&amp;geocode=CUFyFfckfo_VFVhQMgId9At4-yHAlJp5j2mDvw&amp;t=m&amp;vpsrc=0&amp;ll=36.851844,-76.021163&amp;spn=0.006868,0.012875&amp;z=16&amp;source=embed" style="color: #0000ff; text-align: left;">View Larger Map</a></small> -->
+					<div id="map-container" class="map-wrap">
+						<form id="map_search" action="#">
+							<input id="map_search-field" type="text" placeholder="Your ZIP Code or City and State" value="" />
+							<input id="map_search-btn" type="submit" value="Search" />
+						</form>
+						<div id="map-canvas" style="width:1000px; height:445px">
+							Please wait...
+						</div> <!-- /#map-canvas -->
+					</div>
 				</article><!--End Content-->
 				<aside class="testimonial">
 					<h2>Testimonial</h2>
@@ -84,7 +92,7 @@
 				<div id="footer_top">
 					<section class="three_column clearfix">
 						<div id="tweet">
-							<a class="twitter-timeline" href="https://twitter.com/OceanArtVB" data-widget-id="389195200196669440" width="225" height="310">Tweets by @OceanArtVB</a>
+							<a class="twitter-timeline" href="https://twitter.com/OceanArtVB" data-widget-id="389195200196669440" width="225" height="310" data-chrome="nofooter transparent">Tweets by @OceanArtVB</a>
 						</div>
 					</section><!-- end column one -->
 					<section class="three_column">
@@ -132,8 +140,10 @@
 		<script type="text/javascript">
 			window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>');
 		</script>
+		<script src="//maps.googleapis.com/maps/api/js?sensor=false&libraries=geometry" type="text/javascript"></script>
 		<!-- scripts concatenated and minified via ant build script-->
 		<script defer="defer" src="js/plugins.js" type="text/javascript"></script>
+		<script defer="defer" src="js/main.js" type="text/javascript"></script>
 		<script type="text/javascript">
 			jQuery(document).ready(function($) {
 				$(".map").fitVids({ customSelector: "iframe"});
