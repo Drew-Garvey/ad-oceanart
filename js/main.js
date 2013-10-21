@@ -49,6 +49,11 @@ function showMap () {
 		};
 	};
 
+	// Set markers setMap to null to remove it from map
+	var removeUserMarker = function(marker) {
+		marker.setMap(null);
+	};
+
 	// Finds the nearest pin and pushest
 	var findOA = function(address, remove) {
 		var bounds = new google.maps.LatLngBounds();
