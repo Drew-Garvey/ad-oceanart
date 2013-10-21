@@ -549,6 +549,54 @@ blockquote {
   font-weight: bold;
 }
 
+/* Map */
+#map-canvas {
+    width:100%!important;
+    height:465px;
+}
+
+#map_search {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+#map_search #map_search-field {
+    padding: 1em 0.6em;
+    margin-right: 0.6em;
+    width: 75%;
+}
+
+#map_search #map_search-btn {
+    color: #ffffff;
+    padding: 1em 0;
+    width: 20.33%;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid rgba(10,67,109,1);
+    background: rgb(31,87,136);
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzFmNTc4OCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwYTQzNmQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  rgba(31,87,136,1) 0%, rgba(10,67,109,1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(31,87,136,1)), color-stop(100%,rgba(10,67,109,1)));
+    background: -webkit-linear-gradient(top,  rgba(31,87,136,1) 0%,rgba(10,67,109,1) 100%);
+    background: -o-linear-gradient(top,  rgba(31,87,136,1) 0%,rgba(10,67,109,1) 100%);
+    background: -ms-linear-gradient(top,  rgba(31,87,136,1) 0%,rgba(10,67,109,1) 100%);
+    background: linear-gradient(top,  rgba(31,87,136,1) 0%,rgba(10,67,109,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1f5788', endColorstr='#0a436d',GradientType=0 );
+}
+
+#map-direction-panel .adp-directions {
+    width: 100%;
+}
+#map-direction-panel {
+    font-size: 16px;
+}
+#map-direction-panel img.adp-marker {
+    margin: .625em 1.25em;
+}
+.map #map-direction-panel .adp-step, .adp-text {
+    vertical-align: middle;
+}
+
 
 /*
 *====================
@@ -993,6 +1041,73 @@ html[xmlns] .slides {
     width: 44.3em;
     margin: 41px 0 0 5.7em;
   }
+}
+
+/*pullDown
+Made by Justin Aguilar
+www.justinaguilar.com/animations/*/
+
+.pullDown{
+    animation-name: pullDown;
+    -webkit-animation-name: pullDown;   
+
+    animation-duration: 0.7s;   
+    -webkit-animation-duration: 0.7s;
+
+    animation-timing-function: ease-out;    
+    -webkit-animation-timing-function: ease-out;    
+
+    transform-origin: 50% 0%;
+    -ms-transform-origin: 50% 0%;
+    -webkit-transform-origin: 50% 0%;       
+}
+
+@keyframes pullDown {
+    0% {
+        transform: scaleY(0.1);
+    }
+    40% {
+        transform: scaleY(1.02);
+    }
+    60% {
+        transform: scaleY(0.98);
+    }
+    // 80% {
+    //     transform: scaleY(1.01);
+    // }
+    100% {
+        transform: scaleY(1.00);
+    }               
+    // 80% {
+    //     transform: scaleY(1.01);
+    // }
+    // 100% {
+    //     transform: scaleY(1);
+    // }                           
+}
+
+@-webkit-keyframes pullDown {
+    0% {
+        -webkit-transform: scaleY(0.1);
+    }
+    40% {
+        -webkit-transform: scaleY(1.02);
+    }
+    60% {
+        -webkit-transform: scaleY(0.98);
+    }
+    // 80% {
+    //     -webkit-transform: scaleY(1.01);
+    // }
+    100% {
+        -webkit-transform: scaleY(1.00);
+    }               
+    // 80% {
+    //     -webkit-transform: scaleY(1.01);
+    // }
+    // 100% {
+    //     -webkit-transform: scaleY(1);
+    // }       
 }
 
 
