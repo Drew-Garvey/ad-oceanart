@@ -1,7 +1,11 @@
 jQuery.noConflict();
 
 function showMap () {
-	var geocoder = new google.maps.Geocoder(),
+	var directionsDisplay = new google.maps.DirectionsRenderer({
+			suppressMarkers: true
+		}),
+		directionsService = new google.maps.DirectionsService(),
+		geocoder = new google.maps.Geocoder(),
 		oA = {
 			title : "Ocean Art",
 			street : "1628 Laskin Road, Suite 716 Hiltop North Shopping Center",
@@ -20,7 +24,6 @@ function showMap () {
 		}),
 		$mapSearch = jQuery('#map_search'),
 		infowindow = new google.maps.InfoWindow(),
-		entryIDReverseLookup = {},
 		oAmarker = new google.maps.Marker({
 			position : new google.maps.LatLng(36.85195, -76.01913),
 			map : map,
@@ -31,10 +34,17 @@ function showMap () {
 			)
 		}),
 		userPostion = null;
+	
+	jQuery('#map-container').after('<div id="map-direction-panel" class="direction-panel hidden"></div>');
+
+	// Sets up the method that draws a path two locations
+	directionsDisplay.setMap(map);
+
+	directionsDisplay.setPanel(document.getElementById('map-direction-panel'));
+
 
 	var markerListener = function(marker, i) {
 		return function() {
-
 			infowindow.open(map, marker);
 		};
 	};
@@ -46,24 +56,6 @@ function showMap () {
 		// Converts the value from meters to miles
 		// nearest = nearest *= 0.000621371192;
 
-		// nearestVal = nearest;
-
-		// nearest = Math.ceil(nearest);
-
-		// // Converts the value to a string
-		// nearest = nearest.toString();
-
-		// console.log('The closest marker\'s index is ' + nearestIndex + ' and the distance to the closest pin is ' + nearest + ' miles away');
-
-		// if (nearest !== null && $closestSection.hasClass('inactive') === false) {
-		// 	$closestSection.find('.miles').text(nearest);
-		// 	$closestSection.find('.city').html(locationCare[nearestIndex].title + '<br/>' + locationCare[nearestIndex].map_city + ', ' + locationCare[nearestIndex].map_state_abbreviation);
-		// }
-
-		// markerDistance = nearest;
-
-		// setInfoWindow(allMarkers[nearestIndex], nearestIndex);
-
 		// Sets the viewport for the map
 		bounds.extend(oAmarker.getPosition());
 		bounds.extend(userPostion.getPosition());
@@ -71,9 +63,25 @@ function showMap () {
 		
 		// Zooms out a level to ensure both the user pin and the hospital pin show when the infobox is open
 		var zoomLvl = map.getZoom();
-		zoomLvl--;
 		map.setZoom(zoomLvl);
 	};
+
+	function calcRoute(address) {
+		var start = address,
+			end = oA.street + ' ' + oA.city + ' ' + oA.state + ' ' + oA.zip,
+			request = {
+				origin: start,
+				destination: end,
+				travelMode: google.maps.TravelMode.DRIVING
+			};
+
+		directionsService.route(request, function(response, status) {
+			if (status == google.maps.DirectionsStatus.OK) {
+				console.log(directionsDisplay);
+				directionsDisplay.setDirections(response);
+			}
+		});
+	}
 
 	// Sets up the search function
 	var search = function(id, marker) {
@@ -107,6 +115,7 @@ function showMap () {
 				});
 
 				findOA(address);
+				calcRoute(searchVal);
 
 			} else {
 				alert('Geocode was not successful for the following reason: ' + status);
@@ -124,7 +133,7 @@ function showMap () {
 
 		infowindow.close();
 
-		// $closestSection.removeClass('hidden');
+		jQuery('#map-direction-panel').removeClass('hidden');
 	});
 
 	google.maps.event.addListener(map, 'click', (function() {
