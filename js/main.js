@@ -35,7 +35,7 @@ function showMap () {
 		}),
 		userPostion = null;
 	
-	jQuery('#map-container').after('<div id="map-direction-panel" class="direction-panel hidden"></div>');
+	jQuery('#map-container').after('<div id="map-direction-panel" class="direction-panel pullDown hidden"></div>');
 
 	// Sets up the method that draws a path two locations
 	directionsDisplay.setMap(map);
@@ -77,7 +77,6 @@ function showMap () {
 
 		directionsService.route(request, function(response, status) {
 			if (status == google.maps.DirectionsStatus.OK) {
-				console.log(directionsDisplay);
 				directionsDisplay.setDirections(response);
 			}
 		});
