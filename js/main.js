@@ -146,5 +146,15 @@ function showMap () {
 }
 
 jQuery(document).ready(function($) {
-	showMap();
+	var size = window.getComputedStyle(document.body,':after').getPropertyValue('content');
+	console.log(size);
+
+	if (size === 'desktop') {
+		showMap();
+	} else {
+		jQuery('#map-canvas').css('height', 'auto');
+		jQuery('#map-canvas .loading').addClass('hidden');
+		jQuery('#map-canvas h3').removeClass('hidden');
+		jQuery('#map_search').addClass('hidden');
+	}
 });
