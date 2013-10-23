@@ -663,6 +663,7 @@ footer div#tweet:after {
     position: absolute;
     bottom: -60px;
     left: 0;
+    /*  \m/ ( - __- ) \m/  */
     width: 315px; height: 62px;
 }
     
@@ -998,6 +999,10 @@ html[xmlns] .slides {
 @media only screen and (min-width: 960px) {
   /* Style adjustments for viewports 768px and over go here */
   
+    body:after {
+      content: 'desktop';
+      display: none;
+    }
   
   header, div#main, div#footer_top {
      max-width: 1024px;
