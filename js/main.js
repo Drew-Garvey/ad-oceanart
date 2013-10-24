@@ -149,7 +149,7 @@ jQuery(document).ready(function($) {
 	var size = window.getComputedStyle(document.body,':after').getPropertyValue('content');
 	console.log(size);
 
-	if (size === 'desktop') {
+	if (size === 'desktop' && jQuery('body').hasClass('hasMap') === true) {
 		showMap();
 	} else {
 		jQuery('#map-canvas').css('height', 'auto');
