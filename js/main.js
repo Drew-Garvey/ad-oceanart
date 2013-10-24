@@ -157,4 +157,6 @@ jQuery(document).ready(function($) {
 		jQuery('#map-canvas h3').removeClass('hidden');
 		jQuery('#map_search').addClass('hidden');
 	}
+
+	jQuery('.flexslider').flexslider();
 });
