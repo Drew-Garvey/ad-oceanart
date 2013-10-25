@@ -130,14 +130,19 @@ function showMap () {
 	// On form submit, run the search function
 	$mapSearch.on('submit', function(e) {
 		e.preventDefault();
+		$mapSearch.find('input[type="text"]').removeClass('error');
 
-		location.hash = "#map-container";
+		if ($mapSearch.find('input[type="text"]').val() !== '') {
+			location.hash = "#map-container";
 
-		search('#map_search-field');
+			search('#map_search-field');
 
-		infowindow.close();
+			infowindow.close();
 
-		jQuery('#map-direction-panel').removeClass('hidden');
+			jQuery('#map-direction-panel').removeClass('hidden');
+		} else {
+			$mapSearch.find('input[type="text"]').addClass('error');
+		}
 	});
 
 	google.maps.event.addListener(map, 'click', (function() {
@@ -147,7 +152,7 @@ function showMap () {
 
 jQuery(document).ready(function($) {
 	var size = window.getComputedStyle(document.body,':after').getPropertyValue('content');
-	console.log(size);
+	// console.log(size);
 
 	if (size === 'desktop' && jQuery('body').hasClass('hasMap') === true) {
 		showMap();
